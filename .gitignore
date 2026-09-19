@@ -141,3 +141,23 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Backups
+backups/
+
+# VS Code / OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Python / AI
+__pycache__/
+*.pyc
+.venv/
+venv/
