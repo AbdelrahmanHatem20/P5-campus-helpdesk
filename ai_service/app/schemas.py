@@ -1,44 +1,42 @@
-# app/schemas.py
+from typing import Optional, List, Dict, Any
 
-from typing import List, Optional
-
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 
 class TicketRequest(BaseModel):
-    """
-    Data received from the Backend.
-    """
 
-    title: str = Field(
-        ...,
-        description="Ticket title"
-    )
+    title: str
 
-    description: str = Field(
-        ...,
-        description="Detailed ticket description"
-    )
+    description: str
 
-    location: Optional[str] = Field(
-        None,
-        description="Ticket location"
-    )
+    location: Optional[str] = None
+
+    urgency: Optional[str] = "Medium"
+
+
+class DuplicateResponse(BaseModel):
+
+    is_duplicate: bool
+
+    similarity: float
+
+    matched_ticket_id: Optional[str] = None
 
 
 class TicketAnalysisResponse(BaseModel):
-    """
-    AI analysis returned to the Backend.
-    """
 
     category: str
 
     priority: str
 
-    sla_risk: str
+    decision_source: str
 
-    confidence: float
+    rule_result: Dict[str, Any]
+
+    ml_result: Optional[Dict[str, Any]]
+
+    duplicate: Optional[Dict[str, Any]]
+
+    sla: Optional[Dict[str, Any]]
 
     explanation: List[str]
-
-    method: str

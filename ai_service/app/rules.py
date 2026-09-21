@@ -1,10 +1,12 @@
-# app/rules.py
-
 # Keywords used to detect the ticket category
 CATEGORY_RULES = {
-    "Network": [
+    "WiFi": [
         "wifi",
         "wi-fi",
+        "wireless"
+    ],
+
+    "Network": [
         "internet",
         "network",
         "connection",
@@ -12,17 +14,22 @@ CATEGORY_RULES = {
         "ethernet"
     ],
 
-    "Hardware": [
+    "Computer": [
         "computer",
         "pc",
         "laptop",
-        "keyboard",
-        "mouse",
-        "monitor",
-        "screen",
+        "desktop"
+    ],
+
+    "Printer": [
         "printer",
+        "printing",
+        "print"
+    ],
+
+    "Projector": [
         "projector",
-        "device"
+        "projection"
     ],
 
     "Software": [
@@ -37,85 +44,87 @@ CATEGORY_RULES = {
         "bug"
     ],
 
-    "Electrical": [
+    "Electricity": [
         "electricity",
         "power",
         "socket",
         "plug",
-        "electric",
-        "light",
-        "lights"
+        "electric"
     ],
 
-    "Facilities": [
-        "door",
-        "chair",
-        "desk",
-        "room",
+    "Lighting": [
+        "light",
+        "lights",
+        "lighting",
+        "lamp",
+        "bulb"
+    ],
+
+    "Air Conditioning": [
         "air conditioner",
         "air conditioning",
-        "ac",
-        "window"
+        "air conditioning unit",
+        "ac"
     ],
 
-    "Cleaning": [
+    "Furniture": [
+        "chair",
+        "desk",
+        "table",
+        "furniture",
+        "seat"
+    ],
+
+    "Cleanliness": [
         "dirty",
         "cleaning",
         "trash",
         "garbage",
         "dust",
-        "clean"
+        "clean",
+        "waste"
     ],
 
-    "Security": [
-        "security",
-        "access",
-        "access card",
-        "unauthorized",
-        "lost card",
-        "intruder"
+    "Plumbing": [
+        "water",
+        "leak",
+        "pipe",
+        "plumbing",
+        "faucet",
+        "toilet",
+        "sink"
     ]
 }
 
 
-# Keywords used to determine priority
-PRIORITY_RULES = {
-    "Critical": [
-        "fire",
-        "smoke",
-        "danger",
-        "emergency",
-        "security breach",
-        "life threatening"
-    ],
+# Emergency keywords
+EMERGENCY_KEYWORDS = [
+    "fire",
+    "smoke",
+    "gas leak",
+    "danger",
+    "emergency",
+    "life threatening"
+]
 
-    "High": [
-        "urgent",
-        "asap",
-        "immediately",
-        "not working",
-        "cannot access",
-        "can't access",
-        "exam",
-        "lecture",
-        "deadline",
-        "important"
-    ],
 
-    "Medium": [
-        "slow",
-        "intermittent",
-        "sometimes",
-        "problem",
-        "issue",
-        "unstable"
-    ],
+# Priority Matrix: Impact x Urgency
+PRIORITY_MATRIX = {
+    "Low": {
+        "Low": "Low",
+        "Medium": "Low",
+        "High": "Medium"
+    },
 
-    "Low": [
-        "request",
-        "minor",
-        "question",
-        "when possible",
-        "suggestion"
-    ]
+    "Medium": {
+        "Low": "Low",
+        "Medium": "Medium",
+        "High": "High"
+    },
+
+    "High": {
+        "Low": "High",
+        "Medium": "High",
+        "High": "Critical"
+    }
 }
