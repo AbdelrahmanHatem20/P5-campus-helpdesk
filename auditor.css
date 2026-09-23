@@ -1,0 +1,31 @@
+/* تنسيقات خاصة بصفحات الـ Auditor */
+
+.audit-table-row.row-selected {
+    background-color: #ccfbf1 !important;
+}
+
+.event-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.event-details-list .ed-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #94a3b8;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.event-details-list .ed-value {
+    font-size: 14px;
+    color: #0f172a;
+    font-weight: 600;
+}
+.change-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 8px;
+}
