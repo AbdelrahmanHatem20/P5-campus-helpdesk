@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixline - All tickets</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="roles.css">
+    <link rel="stylesheet" href="agent.css">
+</head>
+<body class="dashboard-body">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div>
+                <div class="sidebar-brand">
+                    <span class="brand-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </span>
+                    <span class="brand-name">Fixline</span>
+                </div>
+
+                <ul class="sidebar-menu">
+                    <li class="menu-item">
+                        <a href="agent-dashboard.html">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="menu-item active">
+                        <a href="all-tickets.html">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v6a2 2 0 0 0 0 4v6H4v-6a2 2 0 0 0 0-4z"></path></svg>
+                            All tickets
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="user-avatar">OF</div>
+                <div class="user-info">
+                    <span class="user-name">Omar Farouk</span>
+                    <span class="user-role">Helpdesk Agent</span>
+                </div>
+                <button class="logout-btn" type="button" title="Log out">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="page-title">All tickets</div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" placeholder="Search tickets, assets, people">
+                    </div>
+                    <button class="icon-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    </button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="page-heading-row">
+                    <div>
+                        <h1>All tickets</h1>
+                        <p>48 open · 5 unassigned</p>
+                    </div>
+                    <div class="header-btn-group">
+                        <button class="btn-ghost" id="exportBtn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Export
+                        </button>
+                        <button class="btn-solid-dark" onclick="window.location.href='create-ticket.html'">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            Create ticket
+                        </button>
+                    </div>
+                </div>
+
+                <div class="text-tabs" id="viewTabs">
+                    <button class="active">All open <span class="count">48</span></button>
+                    <button>Unassigned <span class="count">5</span></button>
+                    <button>Breaching SLA <span class="count">3</span></button>
+                    <button>Assigned to me</button>
+                </div>
+
+                <div class="filters-row">
+                    <div class="filter-search">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" placeholder="Search tickets">
+                    </div>
+                    <span class="filter-pill">Status: 3 selected</span>
+                    <span class="filter-pill">Priority: High, Critical</span>
+                    <span class="filter-dropdown">Category <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                    <span class="filter-dropdown">Building <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                </div>
+
+                <div class="bulk-bar" id="bulkBar">
+                    <div class="bulk-left">
+                        <span id="bulkCount">0 selected</span>
+                    </div>
+                    <div class="bulk-actions">
+                        <button class="btn-solid-dark" style="padding:8px 16px;" onclick="showToast('Tickets assigned.')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            Assign
+                        </button>
+                        <button class="btn-ghost" style="padding:8px 16px;" onclick="showToast('Priority updated.')">Set priority</button>
+                        <button class="btn-ghost" style="padding:8px 16px;" onclick="showToast('Duplicates merged.')">Merge duplicates</button>
+                    </div>
+                </div>
+
+                <div class="card" style="padding:0;">
+                    <table class="data-table" id="ticketsTable">
+                        <thead>
+                            <tr>
+                                <th style="width:36px;"></th>
+                                <th>Ticket</th>
+                                <th>Problem</th>
+                                <th>Status</th>
+                                <th>Priority</th>
+                                <th>Assigned to</th>
+                                <th>SLA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="row-check"></td>
+                                <td class="cell-primary">TCK-2041</td>
+                                <td>AC not cooling in Meeting Room 3<br><span class="cell-muted">TCK-2041</span></td>
+                                <td><span class="pill pill-in-progress">In progress</span></td>
+                                <td><span class="priority-flag high">High</span></td>
+                                <td>Sara Mahmoud</td>
+                                <td><div class="mini-progress"><span style="width:60%; background:#f59e0b;"></span></div></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="row-check" checked></td>
+                                <td class="cell-primary">TCK-2041</td>
+                                <td>AC not cooling in Meeting Room 3<br><span class="cell-muted">TCK-2041</span></td>
+                                <td><span class="pill pill-assigned">Assigned</span></td>
+                                <td><span class="priority-flag medium">Medium</span></td>
+                                <td>Ali Adel</td>
+                                <td><div class="mini-progress"><span style="width:25%; background:#7f1d1d;"></span></div></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="row-check" checked></td>
+                                <td class="cell-primary">TCK-2041</td>
+                                <td>AC not cooling in Meeting Room 3<br><span class="cell-muted">TCK-2041</span></td>
+                                <td><span class="pill pill-triaged">Triaged</span></td>
+                                <td><span class="priority-flag critical">Critical</span></td>
+                                <td>Karim Adel</td>
+                                <td><div class="mini-progress"><span style="width:40%; background:#ea580c;"></span></div></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="row-check"></td>
+                                <td class="cell-primary">TCK-2041</td>
+                                <td>AC not cooling in Meeting Room 3<br><span class="cell-muted">TCK-2041</span></td>
+                                <td><span class="pill pill-resolved">Resolved</span></td>
+                                <td><span class="priority-flag high">High</span></td>
+                                <td>Ahmed Tarek</td>
+                                <td><div class="mini-progress"><span style="width:100%; background:#16a34a;"></span></div></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="row-check"></td>
+                                <td class="cell-primary">TCK-2041</td>
+                                <td>AC not cooling in Meeting Room 3<br><span class="cell-muted">TCK-2041</span></td>
+                                <td><span class="pill pill-new">New</span></td>
+                                <td><span class="priority-flag low">Low</span></td>
+                                <td class="cell-muted">Not assigned</td>
+                                <td><div class="mini-progress"><span style="width:15%; background:#2563eb;"></span></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="roles-common.js"></script>
+    <script src="agent.js"></script>
+</body>
+</html>

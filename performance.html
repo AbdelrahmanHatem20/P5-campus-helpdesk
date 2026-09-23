@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixline - Performance</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="roles.css">
+    <link rel="stylesheet" href="manager.css">
+</head>
+<body class="dashboard-body">
+    <div class="app-container">
+        <aside class="sidebar">
+            <div>
+                <div class="sidebar-brand">
+                    <span class="brand-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></span>
+                    <span class="brand-name">Fixline</span>
+                </div>
+                <ul class="sidebar-menu">
+                    <li class="menu-item"><a href="manager-dashboard.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>Dashboard</a></li>
+                    <li class="menu-item"><a href="sla-monitoring.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>SLA monitoring</a></li>
+                    <li class="menu-item"><a href="workload.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Workload</a></li>
+                    <li class="menu-item"><a href="recurring-issues.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>Recurring issues</a></li>
+                    <li class="menu-item active"><a href="performance.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Performance</a></li>
+                    <li class="menu-item"><a href="categories-teams-sla.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>Categories, teams &amp; SLA</a></li>
+                    <li class="menu-item"><a href="reports.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>Reports</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-user">
+                <div class="user-avatar" style="background:#14b8a6;">MS</div>
+                <div class="user-info"><span class="user-name">Mona Saleh</span><span class="user-role">Service Manager</span></div>
+                <button class="logout-btn" type="button" title="Log out"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg></button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="page-title">Performance</div>
+                <div class="header-actions">
+                    <div class="search-box"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><input type="text" placeholder="Search tickets, assets, people"></div>
+                    <button class="icon-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="page-heading-row">
+                    <div><h1>Performance</h1><p>This month · All teams</p></div>
+                    <div class="header-btn-group">
+                        <div class="segmented-toggle">
+                            <button>Week</button>
+                            <button class="active">Month</button>
+                            <button>Quarter</button>
+                        </div>
+                        <button class="btn-ghost"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Export</button>
+                    </div>
+                </div>
+
+                <div class="content-grid">
+                    <div class="card">
+                        <div class="card-header"><h3>Average resolution time (hours)</h3></div>
+                        <svg viewBox="0 0 400 140" width="100%" height="140" preserveAspectRatio="none">
+                            <polyline points="10,50 100,65 190,60 280,68 390,40" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div style="display:flex; justify-content:space-between; font-size:12px; color:#94a3b8;"><span>Week 1</span><span>Week 4</span></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><h3>First-time fix rate</h3></div>
+                        <svg viewBox="0 0 400 140" width="100%" height="140" preserveAspectRatio="none">
+                            <polyline points="10,80 100,75 190,65 280,60 390,45" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div style="display:flex; justify-content:space-between; font-size:12px; color:#94a3b8;"><span>Week 1</span><span>Week 4</span></div>
+                    </div>
+                </div>
+
+                <div class="card" style="padding:0;">
+                    <div style="padding:20px 20px 0;"><h3 style="font-size:16px; font-weight:700; color:#0f172a;">By technician</h3></div>
+                    <table class="data-table">
+                        <thead><tr><th>Technician</th><th>Resolved</th><th>Avg time</th><th>First-time fix</th><th>Reopen rate</th><th>Satisfaction</th></tr></thead>
+                        <tbody>
+                            <tr><td><span class="avatar-chip"><span class="circle" style="background:#2563eb;">KA</span>Karim Adel</span></td><td>34</td><td>5h 20m</td><td>91%</td><td>4%</td><td>4.6</td></tr>
+                            <tr><td><span class="avatar-chip"><span class="circle" style="background:#b91c1c;">SM</span>Sara Mahmoud</span></td><td>29</td><td>4h 05m</td><td>94%</td><td>2%</td><td>4.7</td></tr>
+                            <tr><td><span class="avatar-chip"><span class="circle" style="background:#0d9488;">AT</span>Ahmed Tarek</span></td><td>31</td><td>7h 40m</td><td>82%</td><td>9%</td><td>4.1</td></tr>
+                            <tr><td><span class="avatar-chip"><span class="circle" style="background:#7c3aed;">MA</span>Mostafa Ali</span></td><td>22</td><td>6h 10m</td><td>88%</td><td>5%</td><td>4.4</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="roles-common.js"></script>
+    <script src="manager.js"></script>
+</body>
+</html>

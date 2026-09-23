@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixline - Sign in</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page-body">
+
+    <div class="split-screen">
+        <!-- القسم الأيسر الكحلي -->
+        <div class="left-banner">
+            <div class="brand-logo">
+                <span class="logo-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </span>
+                <span class="brand-text">Fixline</span>
+            </div>
+            
+            <div class="banner-content">
+                <h1 class="hover-glow">Report it.<br>Track it.<br>See it fixed.</h1>
+                <p class="hover-glow-sub">One place for every maintenance and IT request in your building.</p>
+                <button class="btn-outline-light" type="button" id="letsStartBtn">Let's Start</button>
+            </div>
+        </div>
+
+        <!-- القسم الأيمن (نموذج تسجيل الدخول) -->
+        <div class="right-form">
+            <div class="form-wrapper">
+                <h2>Sign in</h2>
+                
+                <!-- أضفنا novalidate عشان نتحكم في الرسائل بالكامل بالجافاسكريبت -->
+                <form id="loginForm" onsubmit="handleLogin(event)" novalidate autocomplete="off">
+                    <div class="input-box">
+                        <label>Email</label>
+                        <input type="text" id="email" name="user_email" autocomplete="off">
+                        <small class="error-msg" id="emailError"></small>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Password</label>
+                        <input type="password" id="password" name="user_pass" autocomplete="new-password">
+                        <small class="error-msg" id="passwordError"></small>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox"> Keep me signed in
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-signin">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/services/api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

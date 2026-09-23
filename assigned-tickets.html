@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixline - Assigned tickets</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="roles.css">
+    <link rel="stylesheet" href="tech.css">
+</head>
+<body class="dashboard-body">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div>
+                <div class="sidebar-brand">
+                    <span class="brand-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </span>
+                    <span class="brand-name">Fixline</span>
+                </div>
+
+                <ul class="sidebar-menu">
+                    <li class="menu-item">
+                        <a href="tech-dashboard.html">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="menu-item active">
+                        <a href="assigned-tickets.html">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                            Assigned tickets
+                            <span class="menu-badge">6</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="user-avatar" style="background:#14b8a6;">KA</div>
+                <div class="user-info">
+                    <span class="user-name">Karim Adel</span>
+                    <span class="user-role">Technician</span>
+                </div>
+                <button class="logout-btn" type="button" title="Log out">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="page-title">Assigned tickets</div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" placeholder="Search tickets, assets, people">
+                    </div>
+                    <button class="icon-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    </button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="page-heading-row">
+                    <div>
+                        <h1>Assigned tickets</h1>
+                        <p>6 tickets · <strong>2 in progress</strong></p>
+                    </div>
+                    <div class="segmented-toggle" id="viewToggle">
+                        <button class="active" data-view="board">Board</button>
+                        <button data-view="list">List</button>
+                    </div>
+                </div>
+
+                <div class="filters-row">
+                    <span class="filter-pill" style="background:#dbeafe; color:#1d4ed8; border-color:#bfdbfe;">Team: Mine</span>
+                    <span class="filter-dropdown">Priority <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                    <span class="filter-dropdown">Status <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                    <span class="filter-dropdown">Due today <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                    <span class="filter-dropdown">Location <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                    <span class="filter-dropdown">Category <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                </div>
+
+                <!-- Board view -->
+                <div class="kanban-board" id="boardView">
+                    <div class="kanban-col">
+                        <div class="kanban-col-header">Assigned <span class="count">2</span></div>
+                        <div class="kanban-card">
+                            <div class="kanban-card-top"><span>TCK-2040</span><span class="priority-flag medium">Medium</span></div>
+                            <div class="kanban-card-title">Projector flickers during presentations</div>
+                            <div class="kanban-card-loc">📍 Building A · 2.04</div>
+                            <div class="mini-progress"><span style="width:20%; background:#16a34a;"></span></div>
+                            <span class="kanban-card-time" style="color:#16a34a;">1d 4h left</span>
+                        </div>
+                        <div class="kanban-card">
+                            <div class="kanban-card-top"><span>TCK-2027</span><span class="priority-flag medium">Medium</span></div>
+                            <div class="kanban-card-title">Badge reader not opening door</div>
+                            <div class="kanban-card-loc">📍 Building A · Entrance</div>
+                            <div class="mini-progress"><span style="width:15%; background:#16a34a;"></span></div>
+                            <span class="kanban-card-time" style="color:#16a34a;">1d 8h left</span>
+                        </div>
+                    </div>
+
+                    <div class="kanban-col">
+                        <div class="kanban-col-header">In progress <span class="count">2</span></div>
+                        <div class="kanban-card">
+                            <div class="kanban-card-top"><span>TCK-2038</span><span class="priority-flag critical">Critical</span></div>
+                            <div class="kanban-card-title">Water leak under kitchen sink</div>
+                            <div class="kanban-card-loc">📍 Building A · Pantry</div>
+                            <div class="mini-progress"><span style="width:88%; background:#dc2626;"></span></div>
+                            <span class="kanban-card-time" style="color:#dc2626;">45m left</span>
+                        </div>
+                        <div class="kanban-card">
+                            <div class="kanban-card-top"><span>TCK-2041</span><span class="priority-flag high">High</span></div>
+                            <div class="kanban-card-title">AC not cooling in Meeting Room 3</div>
+                            <div class="kanban-card-loc">📍 Building B · 3.12</div>
+                            <div class="mini-progress"><span style="width:55%; background:#ea580c;"></span></div>
+                            <span class="kanban-card-time" style="color:#ea580c;">3h 20m left</span>
+                        </div>
+                    </div>
+
+                    <div class="kanban-col">
+                        <div class="kanban-col-header">Waiting for parts <span class="count">1</span></div>
+                        <div class="kanban-card">
+                            <div class="kanban-card-top"><span>TCK-2033</span><span class="priority-flag medium">Medium</span></div>
+                            <div class="kanban-card-title">Replace thermostat</div>
+                            <div class="kanban-card-loc">📍 Building C · 1.01</div>
+                            <div class="mini-progress"><span style="width:35%; background:#16a34a;"></span></div>
+                            <span class="kanban-card-time" style="color:#16a34a;">Paused</span>
+                        </div>
+                    </div>
+
+                    <div class="kanban-col">
+                        <div class="kanban-col-header">Done today <span class="count">1</span></div>
+                        <div class="kanban-card">
+                            <div class="kanban-card-top"><span>TCK-2031</span><span class="priority-flag low">Low</span></div>
+                            <div class="kanban-card-title">Replace broken office chair</div>
+                            <div class="kanban-card-loc">📍 Building B · 2.09</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- List view -->
+                <div class="card" id="listView" style="display:none; padding:0;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Ticket</th>
+                                <th>Title</th>
+                                <th>Priority</th>
+                                <th>Status</th>
+                                <th>Location</th>
+                                <th>Time left</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cell-primary">TCK-2038</td>
+                                <td>Water leak under kitchen sink</td>
+                                <td><span class="priority-flag critical">Critical</span></td>
+                                <td><span class="pill pill-in-progress">In progress</span></td>
+                                <td class="cell-muted">Building A · Pantry</td>
+                                <td style="color:#dc2626; font-weight:600;">45m left</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-primary">TCK-2041</td>
+                                <td>AC not cooling in Meeting Room 3</td>
+                                <td><span class="priority-flag high">High</span></td>
+                                <td><span class="pill pill-in-progress">In progress</span></td>
+                                <td class="cell-muted">Building B · 3.12</td>
+                                <td style="color:#ea580c; font-weight:600;">3h 20m left</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-primary">TCK-2040</td>
+                                <td>Projector flickers during presentations</td>
+                                <td><span class="priority-flag medium">Medium</span></td>
+                                <td><span class="pill pill-new">Assigned</span></td>
+                                <td class="cell-muted">Building A · 2.04</td>
+                                <td style="color:#16a34a; font-weight:600;">1d 4h left</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-primary">TCK-2027</td>
+                                <td>Badge reader not opening door</td>
+                                <td><span class="priority-flag medium">Medium</span></td>
+                                <td><span class="pill pill-new">Assigned</span></td>
+                                <td class="cell-muted">Building A · Entrance</td>
+                                <td style="color:#16a34a; font-weight:600;">1d 8h left</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-primary">TCK-2033</td>
+                                <td>Replace thermostat</td>
+                                <td><span class="priority-flag medium">Medium</span></td>
+                                <td><span class="pill" style="background:#f1f5f9; color:#64748b;">Waiting for parts</span></td>
+                                <td class="cell-muted">Building C · 1.01</td>
+                                <td class="cell-muted">Paused</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-primary">TCK-2031</td>
+                                <td>Replace broken office chair</td>
+                                <td><span class="priority-flag low">Low</span></td>
+                                <td><span class="pill pill-resolved">Done today</span></td>
+                                <td class="cell-muted">Building B · 2.09</td>
+                                <td class="cell-muted">—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="roles-common.js"></script>
+    <script src="tech.js"></script>
+</body>
+</html>

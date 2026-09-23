@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixline - Categories, teams &amp; SLA</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="roles.css">
+    <link rel="stylesheet" href="manager.css">
+</head>
+<body class="dashboard-body">
+    <div class="app-container">
+        <aside class="sidebar">
+            <div>
+                <div class="sidebar-brand">
+                    <span class="brand-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></span>
+                    <span class="brand-name">Fixline</span>
+                </div>
+                <ul class="sidebar-menu">
+                    <li class="menu-item"><a href="manager-dashboard.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>Dashboard</a></li>
+                    <li class="menu-item"><a href="sla-monitoring.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>SLA monitoring</a></li>
+                    <li class="menu-item"><a href="workload.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Workload</a></li>
+                    <li class="menu-item"><a href="recurring-issues.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>Recurring issues</a></li>
+                    <li class="menu-item"><a href="performance.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Performance</a></li>
+                    <li class="menu-item active"><a href="categories-teams-sla.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>Categories, teams &amp; SLA</a></li>
+                    <li class="menu-item"><a href="reports.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>Reports</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-user">
+                <div class="user-avatar" style="background:#14b8a6;">MS</div>
+                <div class="user-info"><span class="user-name">Mona Saleh</span><span class="user-role">Service Manager</span></div>
+                <button class="logout-btn" type="button" title="Log out"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg></button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="settings-breadcrumb">Settings <span style="margin:0 6px;">/</span> <strong>Categories, teams &amp; SLA</strong></div>
+                <div class="header-actions">
+                    <div class="search-box"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><input type="text" placeholder="Search settings"></div>
+                    <button class="icon-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="two-col-grid">
+                    <div class="stack-col">
+                        <div class="card">
+                            <div class="card-header"><h3>Categories</h3></div>
+                            <div class="settings-list-item"><div><div class="title">HVAC</div><div class="sub">HVAC &amp; Plumbing</div></div></div>
+                            <div class="settings-list-item"><div><div class="title">Electrical</div><div class="sub">Electrical</div></div></div>
+                            <div class="settings-list-item"><div><div class="title">Plumbing</div><div class="sub">HVAC &amp; Plumbing</div></div></div>
+                            <div class="settings-list-item"><div><div class="title">IT equipment</div><div class="sub">Network &amp; IT</div></div></div>
+                            <div class="settings-list-item"><div><div class="title">Network</div><div class="sub">Network &amp; IT</div></div></div>
+                            <div class="settings-list-item"><div><div class="title">Furniture</div><div class="sub">General</div></div></div>
+                            <button class="btn-ghost" style="margin-top:16px; width:100%; justify-content:center;" onclick="showToast('Add category form would open here.')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                Add category
+                            </button>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header"><h3>Support teams</h3></div>
+                            <div class="settings-list-item"><div><div class="title">HVAC &amp; Plumbing Team</div><div class="sub">3 technicians</div></div></div>
+                            <div class="settings-list-item"><div><div class="title">Electrical Team</div><div class="sub">3 technicians</div></div></div>
+                            <div class="settings-list-item"><div><div class="title">Network &amp; IT Team</div><div class="sub">3 technicians</div></div></div>
+                            <div class="settings-list-item"><div><div class="title">General Team</div><div class="sub">4 technicians</div></div></div>
+                            <button class="btn-ghost" style="margin-top:16px; width:100%; justify-content:center;" onclick="showToast('Add team form would open here.')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                Add team
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="stack-col">
+                        <div class="card">
+                            <div class="card-header"><h3>Priority matrix · Urgency × Impact</h3></div>
+                            <table class="priority-matrix">
+                                <thead><tr><th>Urgency ↓ / Impact →</th><th>Low</th><th>Medium</th><th>High</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Low</td><td><span class="priority-flag low">⚑ Low</span></td><td><span class="priority-flag low">⚑ Low</span></td><td><span class="priority-flag medium">⚑ Medium</span></td></tr>
+                                    <tr><td>Medium</td><td><span class="priority-flag low">⚑ Low</span></td><td><span class="priority-flag medium">⚑ Medium</span></td><td><span class="priority-flag high">⚑ High</span></td></tr>
+                                    <tr><td>High</td><td><span class="priority-flag medium">⚑ Medium</span></td><td><span class="priority-flag high">⚑ High</span></td><td><span class="priority-flag critical">⚑ Critical</span></td></tr>
+                                </tbody>
+                            </table>
+                            <p class="cell-muted" style="margin-top:12px;">Priority is computed automatically. Agents can still override with a reason.</p>
+                        </div>
+
+                        <div class="card" style="padding:0;">
+                            <div style="padding:20px 20px 0;"><h3 style="font-size:16px; font-weight:700; color:#0f172a;">SLA targets</h3></div>
+                            <table class="data-table">
+                                <thead><tr><th>Priority</th><th>First response</th><th>Resolution target</th></tr></thead>
+                                <tbody>
+                                    <tr><td><span class="priority-flag critical">⚑ Critical</span></td><td>15 min</td><td>2 hours</td></tr>
+                                    <tr><td><span class="priority-flag high">⚑ High</span></td><td>30 min</td><td>8 hours</td></tr>
+                                    <tr><td><span class="priority-flag medium">⚑ Medium</span></td><td>2 hours</td><td>2 days</td></tr>
+                                    <tr><td><span class="priority-flag low">⚑ Low</span></td><td>1 day</td><td>5 days</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header"><h3>Business hours</h3></div>
+                            <div class="form-group-sm"><label>Days</label><select><option>Sunday – Thursday</option></select></div>
+                            <div class="form-group-sm"><label>Hours</label><select><option>8:00 AM – 5:00 PM</option></select></div>
+                            <p class="cell-muted" style="margin-top:8px;">SLA countdown pauses outside business hours.</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header"><h3>Automation</h3></div>
+                            <div class="automation-row">
+                                <span>Suggest category and priority (AI-enabled)</span>
+                                <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="roles-common.js"></script>
+    <script src="manager.js"></script>
+</body>
+</html>

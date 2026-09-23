@@ -1,0 +1,99 @@
+/* تنسيقات خاصة بصفحات الـ Service Manager */
+
+.priority-matrix {
+    width: 100%;
+    border-collapse: collapse;
+}
+.priority-matrix th, .priority-matrix td {
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 13px;
+    border-bottom: 1px solid #f1f5f9;
+}
+.priority-matrix th {
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: none;
+}
+.priority-matrix td:first-child, .priority-matrix th:first-child {
+    color: #334155;
+    font-weight: 600;
+}
+
+.list-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+.list-row:last-child { border-bottom: none; }
+.list-row-title { font-size: 14px; font-weight: 600; color: #0f172a; }
+.list-row-sub { font-size: 12px; color: #64748b; margin-top: 2px; }
+
+.line-chart-legend {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: #64748b;
+}
+.line-chart-legend .dot-label { display: flex; align-items: center; gap: 6px; }
+
+.saved-report-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 4px;
+    border-bottom: 1px solid #f1f5f9;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+}
+.saved-report-row:hover { background: #f8fafc; }
+.saved-report-row:last-child { border-bottom: none; }
+.saved-report-row .doc-icon {
+    width: 32px; height: 32px;
+    background: #eef2f7;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: #475569;
+    flex-shrink: 0;
+}
+
+.form-group-sm { margin-bottom: 18px; }
+.form-group-sm:last-child { margin-bottom: 0; }
+.form-group-sm label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px;
+}
+.form-group-sm select, .form-group-sm input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #0f172a;
+    background: #fff;
+    outline: none;
+    appearance: none;
+}
+
+.settings-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 4px;
+    border-bottom: 1px solid #f1f5f9;
+}
+.settings-list-item:last-child { border-bottom: none; }
+.settings-list-item .title { font-size: 14px; font-weight: 600; color: #0f172a; }
+.settings-list-item .sub { font-size: 12px; color: #64748b; margin-top: 2px; }
+
+.automation-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
