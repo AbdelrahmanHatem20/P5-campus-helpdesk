@@ -39,10 +39,49 @@ function handleLogin(event) {
         passwordInput.style.borderColor = "#11223b";
     }
     
-    // لو كل الحقول مليانة، نوديه على الصفحة المناسبة لدوره حسب الإيميل
+    // لو كل الحقول مليانة: نعمل Login حقيقي على السيرفر
+    // ونخزّن الـ Token وبعدين نوديه على صفحة دوره
     if (isValid) {
         const email = emailInput.value.trim().toLowerCase();
+        const password = passwordInput.value;
         const destination = ROLE_ROUTES[email] || "dashboard.html"; // أي إيميل مش معروف بيدخل كـ Reporter افتراضيًا
+
+        // لو الـ API Service متحمّل → لوجين حقيقي + تخزين التوكن
+        if (window.ApiService) {
+            const signInBtn = document.querySelector(".btn-signin");
+            if (signInBtn) {
+                signInBtn.disabled = true;
+                signInBtn.textContent = "Signing in...";
+            }
+
+            window.ApiService.login(email, password)
+                .then(function (data) {
+                    if (signInBtn) {
+                        signInBtn.disabled = false;
+                        signInBtn.textContent = "Sign in";
+                    }
+
+                    if (data && data.token) {
+                        // (2) التوكن اتخزن جوّا login() → نكمّل لصفحة الدور
+                        window.location.href = destination;
+                    } else {
+                        // رد من السيرفر بدون توكن (باسورد غلط مثلاً)
+                        passwordError.textContent = (data && data.message) ? data.message : "Login failed. Please try again.";
+                        passwordInput.style.borderColor = "#d9534f";
+                    }
+                })
+                .catch(function () {
+                    // السيرفر مش متاح → نسيب الصفحة تشتغل زي ما كانت (وضع بدون إنترنت)
+                    if (signInBtn) {
+                        signInBtn.disabled = false;
+                        signInBtn.textContent = "Sign in";
+                    }
+                    window.location.href = destination;
+                });
+            return;
+        }
+
+        // fallback: من غير API Service → نفس السلوك القديم
         window.location.href = destination;
     }
 }
