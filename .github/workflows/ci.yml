@@ -1,0 +1,57 @@
+name: P5-B CI
+
+on:
+  push:
+    branches:
+      - main
+      - devops/**
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  docker-check:
+    name: Docker & PostgreSQL Check
+    runs-on: ubuntu-latest
+
+    env:
+      POSTGRES_DB: campus_helpdesk
+      POSTGRES_USER: helpdesk_user
+      POSTGRES_PASSWORD: ci_test_password
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate Docker Compose
+        run: docker compose config
+
+      - name: Start PostgreSQL
+        run: docker compose up -d db
+
+      - name: Wait for PostgreSQL
+        run: |
+          for i in {1..20}; do
+            if docker compose exec -T db pg_isready -U "$POSTGRES_USER" -d "$POSTGRES_DB"; then
+              echo "PostgreSQL is ready"
+              exit 0
+            fi
+            sleep 3
+          done
+
+          docker compose logs db
+          exit 1
+
+      - name: Test PostgreSQL connection
+        run: |
+          docker compose exec -T db \
+          psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" \
+          -c "SELECT version();"
+
+      - name: Show logs on failure
+        if: failure()
+        run: docker compose logs
+
+      - name: Cleanup
+        if: always()
+        run: docker compose down
